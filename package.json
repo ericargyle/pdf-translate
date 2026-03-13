@@ -1,0 +1,21 @@
+{
+  "name": "pdf-translate",
+  "version": "1.0.0",
+  "description": "Translate PDFs to English and overlay the translated text.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@vitalets/google-translate-api": "^9.2.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "multer": "^2.1.1",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5"
+  }
+}

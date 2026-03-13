@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Translate</title>
+    <meta name="description" content="Upload a PDF, translate it into English, and download a version with the translated overlay." />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="eyebrow">Eric Argyle Consulting</p>
+        <h1>PDF Translate</h1>
+        <p class="leader">Upload a PDF in any language, see a quick translation, and download an English version with the new text overlaid on each page.</p>
+      </header>
+
+      <section class="upload-card">
+        <label class="field">
+          <span class="label-text">Choose a PDF</span>
+          <input type="file" id="pdfInput" accept="application/pdf" />
+        </label>
+        <button class="btn" id="translateBtn">Translate and overlay</button>
+        <div id="status" class="status"></div>
+        <div id="result" class="result hidden">
+          <p id="languageInfo"></p>
+          <a id="downloadLink" class="btn ghost" download="translated.pdf">Download translated PDF</a>
+        </div>
+      </section>
+
+      <section class="notes">
+        <h2>How it works</h2>
+        <ul>
+          <li>The app extracts the text per page and translates it to English using an API.</li>
+          <li>The translated text is drawn in a lightly opaque box near the bottom of each page without altering the original artwork.</li>
+          <li>The output is a brand-new PDF you can download and share.</li>
+        </ul>
+      </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

@@ -6,8 +6,8 @@ const resultEl = document.getElementById("result");
 const languageInfo = document.getElementById("languageInfo");
 const downloadLink = document.getElementById("downloadLink");
 
-const TRANSLATE_URL = "https://translate.argosopentech.com/translate";
-const DETECT_URL = "https://translate.argosopentech.com/detect";
+const TRANSLATE_URL = "https://libretranslate.de/translate";
+const DETECT_URL = "https://libretranslate.de/detect";
 
 let currentObjectUrl = null;
 

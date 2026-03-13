@@ -1,20 +1,23 @@
 # PDF Translate
 
-Web tool that uploads a PDF, translates its text to English, and embeds the translated text as a translucent overlay on each page.
+Static web tool for translating PDFs into English and overlaying the translated text directly in your browser.
 
 ## Features
 
-- **Drop-in translation**: Upload any PDF file and let the server extract the text and detect its language before translating it through a reliable API.
-- **Overlayed English copy**: Each page receives an English translation rendered near the bottom in a subtle white panel so you can read the translation without losing the original layout.
-- **Single download**: Return a brand-new PDF that keeps the source imagery but carries the English text overlay for easy sharing.
+- Upload a PDF and let PDF.js pull out the text per page inside your browser—nothing gets sent to a private server until translation.
+- LibreTranslate handles translating each chunk into English with auto-detect, and pdf-lib draws the translated copy in a translucent callout near the top of every page.
+- Download the newly rendered PDF instantly without leaving the web page.
 
-## Dev setup
+## Live site
+
+The app is hosted at: https://ericargyle.github.io/pdf-translate/
+
+## Development
+
+Because the app is purely static you can also run it locally:
 
 ```bash
-npm install
-npm start
+npx http-server public
 ```
 
-Then open `http://localhost:4173` and upload a PDF.
-
-The server exposes `POST /api/translate` for automated clients. It expects a `multipart/form-data` body with a `pdf` file field and responds with JSON containing a `pdf` base64 blob plus `language` metadata.
+Then visit `http://localhost:8080`.

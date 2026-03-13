@@ -43,14 +43,14 @@ body {
 }
 
 .upload-card {
-  background: rgba(9, 12, 20, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(9, 12, 20, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 24px;
-  padding: 2.25rem;
-  box-shadow: 0 25px 45px rgba(6, 6, 12, 0.6);
+  padding: 2.5rem;
+  box-shadow: 0 25px 45px rgba(6, 6, 12, 0.7);
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .field {
@@ -76,7 +76,7 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: #07090e;
-  background: linear-gradient(135deg, #6df4ff, #5c7CFE);
+  background: linear-gradient(135deg, #6df4ff, #5c7cfe);
   cursor: pointer;
   transition: transform 0.2s ease;
   align-self: flex-start;
@@ -96,10 +96,17 @@ body {
 .status {
   font-size: 0.9rem;
   color: #cdd4ec;
+  min-height: 1.1rem;
+}
+
+.progress {
+  font-size: 0.8rem;
+  color: #8cedff;
+  min-height: 1rem;
 }
 
 .result {
-  background: rgba(12, 15, 24, 0.7);
+  background: rgba(12, 15, 24, 0.75);
   padding: 1rem 1.25rem;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -118,5 +125,10 @@ body {
 @media (max-width: 640px) {
   .upload-card {
     padding: 1.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 }

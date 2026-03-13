@@ -4,7 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PDF Translate</title>
-    <meta name="description" content="Upload a PDF, translate it into English, and download a version with the translated overlay." />
+    <meta
+      name="description"
+      content="Translate any PDF to English directly in your browser and download a version with the English text overlaid."
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -12,7 +15,10 @@
       <header class="hero">
         <p class="eyebrow">Eric Argyle Consulting</p>
         <h1>PDF Translate</h1>
-        <p class="leader">Upload a PDF in any language, see a quick translation, and download an English version with the new text overlaid on each page.</p>
+        <p class="leader">
+          Upload a PDF, translate each page to English, and get a downloadable version with the translated text
+          gently overlaid on every page.
+        </p>
       </header>
 
       <section class="upload-card">
@@ -21,7 +27,8 @@
           <input type="file" id="pdfInput" accept="application/pdf" />
         </label>
         <button class="btn" id="translateBtn">Translate and overlay</button>
-        <div id="status" class="status"></div>
+        <div id="status" class="status" aria-live="polite"></div>
+        <div id="progress" class="progress"></div>
         <div id="result" class="result hidden">
           <p id="languageInfo"></p>
           <a id="downloadLink" class="btn ghost" download="translated.pdf">Download translated PDF</a>
@@ -31,13 +38,15 @@
       <section class="notes">
         <h2>How it works</h2>
         <ul>
-          <li>The app extracts the text per page and translates it to English using an API.</li>
-          <li>The translated text is drawn in a lightly opaque box near the bottom of each page without altering the original artwork.</li>
-          <li>The output is a brand-new PDF you can download and share.</li>
+          <li>PDF.js extracts the text from each page inside your browser (no servers needed).</li>
+          <li>LibreTranslate sinks a translation request for every chunk of text and returns English copy.</li>
+          <li>pdf-lib draws the translation in a translucent callout so the original layout stays visible.</li>
         </ul>
       </section>
     </main>
 
+    <script src="https://unpkg.com/pdfjs-dist@3.8.162/build/pdf.min.js"></script>
+    <script src="https://unpkg.com/pdf-lib@1.26.0/dist/pdf-lib.min.js"></script>
     <script type="module" src="app.js"></script>
   </body>
 </html>
